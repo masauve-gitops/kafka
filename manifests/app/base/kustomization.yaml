@@ -4,3 +4,4 @@ resources:
 - namespace.yaml
 - kafka.yaml
 - knative-eventing.yaml
+- kafkatopic.yaml
