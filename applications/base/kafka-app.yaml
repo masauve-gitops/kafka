@@ -9,7 +9,7 @@ spec:
   project: kafka-knative
   source:
     path: manifests/app/base
-    repoURL: https://github.com/masauve-gitops/kafka-knative.git
+    repoURL: https://github.com/masauve-gitops/kafka-knative
     targetRevision: master
   syncPolicy:
     automated:
