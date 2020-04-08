@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    openshift.io/description: "Kafka + KNative demo"
+    openshift.io/display-name: "demo"
+  name: demo
