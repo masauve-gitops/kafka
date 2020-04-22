@@ -3,5 +3,4 @@ kind: Kustomization
 resources:
 - namespace.yaml
 - kafka.yaml
-- knative-eventing.yaml
 - kafkatopic.yaml
