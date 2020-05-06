@@ -5,7 +5,7 @@ metadata:
   namespace: demo
 spec:
   kafka:
-    replicas: 3
+    replicas: 5
     listeners:
       plain: {}
       tls: {}
