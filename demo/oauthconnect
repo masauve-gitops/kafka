@@ -1,0 +1,31 @@
+export OAUTH_CLIENT_ID=team-b-client
+export OAUTH_CLIENT_SECRET=team-b-client-secret
+export PASSWORD=truststorepassword
+export KAFKA_OPTS=" \
+  -Djavax.net.ssl.trustStore=/opt/kafka/certificates/kafka-client-truststore.p12 \
+  -Djavax.net.ssl.trustStorePassword=$PASSWORD \
+  -Djavax.net.ssl.trustStoreType=PKCS12"
+
+bin/kafka-console-producer.sh --broker-list \
+  my-cluster-kafka-bootstrap.kafka:9093 --topic c_test \
+  --producer-property 'security.protocol=SASL_SSL' \
+  --producer-property 'sasl.mechanism=OAUTHBEARER' \
+  --producer-property 'sasl.jaas.config=org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginModule required;' \
+  --producer-property 'sasl.login.callback.handler.class=io.strimzi.kafka.oauth.client.JaasClientOauthLoginCallbackHandler'
+
+============================
+
+export OAUTH_CLIENT_ID=kafka-consumer
+export OAUTH_CLIENT_SECRET=999e6548-7d8d-47bf-b4b6-e3462bad8c66
+export PASSWORD=truststorepassword
+export KAFKA_OPTS=" \
+  -Djavax.net.ssl.trustStore=/opt/kafka/certificates/kafka-client-truststore.p12 \
+  -Djavax.net.ssl.trustStorePassword=$PASSWORD \
+  -Djavax.net.ssl.trustStoreType=PKCS12"
+  
+bin/kafka-console-consumer.sh --bootstrap-server \
+  my-cluster-kafka-bootstrap.kafka:9093 --topic protected --from-beginning \
+  --consumer-property 'security.protocol=SASL_SSL' \
+  --consumer-property 'sasl.mechanism=OAUTHBEARER' \
+  --consumer-property 'sasl.jaas.config=org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginModule required;' \
+  --consumer-property 'sasl.login.callback.handler.class=io.strimzi.kafka.oauth.client.JaasClientOauthLoginCallbackHandler' 
