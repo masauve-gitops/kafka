@@ -1,15 +1,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kafka-app
+  name: kafka-monitoring
 spec:
   destination:
     namespace: argocd
     server: https://kubernetes.default.svc
   project: kafka-knative
   source:
-    path: manifests/app/base
-    repoURL: https://github.com/masauve-gitops/kafka
+    path: manifests/app/monitoring
+    repoURL: https://github.com/masauve-gitops/kafka/
     targetRevision: master
   syncPolicy:
     automated:
