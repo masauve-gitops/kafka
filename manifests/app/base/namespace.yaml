@@ -3,5 +3,5 @@ kind: Namespace
 metadata:
   annotations:
     openshift.io/description: "Kafka + KNative demo"
-    openshift.io/display-name: "demo"
-  name: demo
+    openshift.io/display-name: "Kafka demo"
+  name: kafka-dev
