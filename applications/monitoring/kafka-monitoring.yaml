@@ -8,7 +8,7 @@ spec:
     server: https://kubernetes.default.svc
   project: kafka-monitoring
   source:
-    path: manifests/app/monitoring
+    path: manifests/app/monitoring/base
     repoURL: https://github.com/masauve-gitops/kafka/
     targetRevision: master
   syncPolicy:
