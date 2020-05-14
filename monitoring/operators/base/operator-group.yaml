@@ -6,4 +6,4 @@ metadata:
   name: monitoring
 spec:
   targetNamespaces:
-  - seating-monitoring
+  - monitoring

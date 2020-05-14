@@ -1,9 +1,9 @@
-# oc policy add-role-to-user view system:serviceaccount:seating-monitoring:prometheus-k8s -n seating
+# oc policy add-role-to-user view system:serviceaccount:monitoring:prometheus-k8s -n kafka-dev
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: prometheus-seating-view
-  namespace: seating
+  name: prometheus-kafka-view
+  namespace: kafka-dev
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -11,4 +11,4 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: prometheus-k8s
-  namespace: seating-monitoring
+  namespace: monitoring
