@@ -9,3 +9,4 @@ generatorOptions:
 resources:
   - kafka-connect.yaml
   - my-sql-credentials.yaml
+  - kafka-connector.yaml
