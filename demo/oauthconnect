@@ -7,7 +7,7 @@ export KAFKA_OPTS=" \
   -Djavax.net.ssl.trustStoreType=PKCS12"
 
 bin/kafka-console-producer.sh --broker-list \
-  my-cluster-kafka-bootstrap.kafka:9093 --topic c_test \
+  my-cluster-kafka-bootstrap.kafka:9093 --topic b_test \
   --producer-property 'security.protocol=SASL_SSL' \
   --producer-property 'sasl.mechanism=OAUTHBEARER' \
   --producer-property 'sasl.jaas.config=org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginModule required;' \

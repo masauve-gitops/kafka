@@ -6,5 +6,5 @@ metadata:
   labels:
     strimzi.io/cluster: my-cluster
 spec:
-  partitions: 100
+  partitions: 3
   replicas: 1
